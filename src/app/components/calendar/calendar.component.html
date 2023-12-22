@@ -1,0 +1,19 @@
+<div>
+  <div class="this-month">
+    {{ calendarService.date | date : "MMMM YYYY" : "default" }}
+  </div>
+  <div class="calendar">
+    <!-- Weekdays -->
+    <app-one-day
+      *ngFor="let weekday of calendarService.weekDays"
+      [weekday]="weekday"
+    ></app-one-day>
+
+    <!-- Month -->
+    <app-one-day
+      *ngFor="let item of calendarService.calendar; let i = index"
+      [singleDay]="item"
+      [isSunday]="i % 7 === 0 ? true : false"
+    ></app-one-day>
+  </div>
+</div>

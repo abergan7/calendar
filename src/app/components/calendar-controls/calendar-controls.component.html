@@ -1,0 +1,99 @@
+<div class="control-container">
+  <label class="margin-right">Vnesi leto</label
+  ><input
+    #yearModel="ngModel"
+    name="year"
+    [(ngModel)]="year"
+    type="text"
+    class="date-input mr-5"
+    placeholder="YYYY"
+    required
+    pattern="^(?:\d{4})$"
+    [mask]="'0000'"
+  />
+
+  <label class="margin-right">Izberi mesec:</label>
+  <select
+    class="select-month margin-right"
+    name="month"
+    [(ngModel)]="selectedMonth"
+    required
+  >
+    <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+  </select>
+
+  <button
+    (click)="this.customDate()"
+    class="btn-show"
+    [disabled]="yearModel.errors || !yearModel.touched"
+    [ngClass]="{ 'btn-disabled': yearModel.errors }"
+  >
+    Pojdi
+  </button>
+  <p
+    class="text-error"
+    *ngIf="yearModel.errors && yearModel.touched && yearModel.dirty"
+  >
+    Napačno leto, vnesite kot: YYYY
+  </p>
+</div>
+<hr class="hr-styles" />
+<div class="control-container">
+  <label class="margin-right">Izberi datoteko z dogodki:</label>
+  <input
+    type="file"
+    accept=".txt"
+    (change)="onFileSelected($event)"
+    class="file-input"
+  />
+  <p class="text-error" *ngIf="calendarService.errorOccurred">
+    Prišlo je do napake
+  </p>
+  <p class="text-success" *ngIf="calendarService.fileReadSuccessfully">
+    Datoteka uspešno prebrana
+  </p>
+</div>
+<hr class="hr-styles" />
+<div class="control-container">
+  <form>
+    <label class="margin-right">Vnesi datum:</label>
+    <input
+      #dateModel="ngModel"
+      name="inputDate"
+      type="text"
+      [(ngModel)]="inputDate"
+      (keydown.enter)="!dateModel.errors ? this.customDayFullDate() : ''"
+      placeholder="YYYY-MM-DD"
+      class="date-input margin-right"
+      required
+      pattern="^\d{4}-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])$"
+    />
+    <button
+      (click)="this.customDayFullDate()"
+      class="btn-show"
+      [ngClass]="{ 'btn-disabled': dateModel.errors }"
+      [disabled]="dateModel.errors || !dateModel.touched"
+    >
+      Pojdi
+    </button>
+  </form>
+  <p
+    class="text-error"
+    *ngIf="dateModel.errors && dateModel.touched && dateModel.dirty"
+  >
+    Napačen datum, vnesite kot: YYYY-MM-DD
+  </p>
+</div>
+<hr class="hr-styles" />
+<div class="travel-container">
+  <app-control-button [travelDirection]="travelDirection.BackwardsOneMonth"
+    ><</app-control-button
+  >
+  <app-control-button [travelDirection]="travelDirection.Today"
+    >Danes</app-control-button
+  >
+  <app-control-button [travelDirection]="travelDirection.ForwardOneMonth"
+    >></app-control-button
+  >
+</div>
+<div></div>

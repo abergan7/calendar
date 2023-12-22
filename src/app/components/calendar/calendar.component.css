@@ -1,0 +1,7 @@
+.this-month {
+  @apply bg-violet-50 rounded-t-lg pt-5 flex justify-center items-center text-violet-700 text-lg font-bold;
+}
+
+.calendar {
+  @apply bg-violet-50 p-8 grid grid-cols-7 grid-rows-7 gap-4 rounded-b-lg;
+}

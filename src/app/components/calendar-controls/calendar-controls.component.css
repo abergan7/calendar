@@ -1,0 +1,47 @@
+.select-month {
+  @apply bg-violet-100 border border-violet-300 text-violet-700  pr-8 rounded leading-tight focus:outline-none focus:border-violet-500 focus:ring focus:ring-violet-200;
+}
+
+.date-input {
+  @apply pl-3 pr-10 appearance-none bg-violet-100 border border-violet-300 text-violet-700 py-1 px-1 pr-8 rounded leading-tight focus:outline-none focus:border-violet-500 focus:ring focus:ring-violet-200;
+}
+
+.file-input {
+  @apply text-violet-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100 hover:cursor-pointer hover:file:cursor-pointer;
+}
+
+.btn-show {
+  @apply bg-violet-50 hover:bg-violet-100 text-violet-700 font-bold py-2 px-4 rounded-full cursor-pointer;
+}
+
+.travel-container {
+  @apply grid grid-cols-3 gap-6 text-sm;
+}
+
+.this-month {
+  @apply m-4 flex justify-center items-center bg-violet-50 text-violet-700 font-bold  rounded-full;
+}
+
+.control-container {
+  @apply m-5;
+}
+
+.hr-styles {
+  @apply my-5 mx-2;
+}
+
+.margin-right {
+  @apply mr-4;
+}
+
+.btn-disabled {
+  @apply bg-violet-50 hover:bg-violet-50 text-violet-200 font-bold py-2 px-4 rounded-full cursor-auto;
+}
+
+.text-error {
+  @apply text-red-500 text-xs absolute;
+}
+
+.text-success {
+  @apply text-green-500 text-xs absolute;
+}

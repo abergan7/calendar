@@ -1,0 +1,28 @@
+<!-- Weekday -->
+<div *ngIf="weekday" class="weekday">
+  {{ weekday }}
+</div>
+
+<!-- Single day in a month -->
+<div
+  *ngIf="singleDay"
+  class="day"
+  [ngClass]="{
+    sunday: isSunday,
+    holiday: singleDay.holiday?.length,
+    invisible: !singleDay.dayDate,
+    today:
+      singleDay.dayDate?.getFullYear() === today.getFullYear() &&
+      singleDay.dayDate?.getMonth() === today.getMonth() &&
+      singleDay.dayDate?.getDate() === today.getDate()
+  }"
+  (mouseenter)="showHolidays = true"
+  (mouseleave)="showHolidays = false"
+>
+  {{ singleDay.dayDate | date : "d" }}
+  <app-tooltip
+    *ngIf="singleDay.holiday?.length"
+    [holidays]="singleDay.holiday"
+    [showTooltip]="showHolidays"
+  ></app-tooltip>
+</div>

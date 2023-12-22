@@ -1,0 +1,8 @@
+.container-calendar {
+  @apply min-h-screen flex items-center justify-center;
+}
+.calendar {
+  min-width: 1100px;
+  @apply grid auto-rows-auto gap-4 shadow-lg p-10
+    shadow-indigo-500/40;
+}

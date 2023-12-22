@@ -1,0 +1,19 @@
+.weekday {
+  @apply flex items-center justify-center rounded-full bg-violet-500 text-violet-100 p-2 px-5 font-bold;
+}
+
+.day {
+  @apply flex relative items-center justify-center rounded-full bg-violet-50 text-violet-700 text-lg h-10 w-10 m-auto font-semibold;
+}
+
+.sunday {
+  @apply bg-violet-300 text-violet-800;
+}
+
+.today {
+  @apply border-4 border-violet-500 bg-violet-300 rounded-full text-violet-700 text-lg h-10 w-10 m-auto font-semibold;
+}
+
+.holiday {
+  @apply bg-violet-400 text-violet-50;
+}
