@@ -5,7 +5,7 @@
     name="year"
     [(ngModel)]="year"
     type="text"
-    class="date-input mr-5"
+    class="date-input margin-right"
     placeholder="YYYY"
     required
     pattern="^(?:\d{4})$"
@@ -37,7 +37,9 @@
     Napačno leto, vnesite kot: YYYY
   </p>
 </div>
+
 <hr class="hr-styles" />
+
 <div class="control-container">
   <label class="margin-right">Izberi datoteko z dogodki:</label>
   <input
@@ -53,7 +55,9 @@
     Datoteka uspešno prebrana
   </p>
 </div>
+
 <hr class="hr-styles" />
+
 <div class="control-container">
   <form>
     <label class="margin-right">Vnesi datum:</label>
@@ -84,7 +88,9 @@
     Napačen datum, vnesite kot: YYYY-MM-DD
   </p>
 </div>
+
 <hr class="hr-styles" />
+
 <div class="travel-container">
   <app-control-button [travelDirection]="travelDirection.BackwardsOneMonth"
     ><</app-control-button

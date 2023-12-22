@@ -68,6 +68,8 @@ export class CreateCalendarService {
     } catch (e) {
       return;
     }
+    this.holidaysThisMonth = [];
+    this.checkHolidaysMonth();
     this.createCalendar();
   }
 
@@ -106,19 +108,17 @@ export class CreateCalendarService {
           (new Date(event.dateEnd) >
             new Date(this.date.getFullYear(), this.date.getMonth(), 0) &&
             event.recurringDays === RecurringDays.JustOne) ||
-          event.dateEnd === undefined ||
-          event.recurringDays > 0
+          (new Date(event.dateEnd) >
+            new Date(this.date.getFullYear(), this.date.getMonth(), 0) &&
+            event.recurringDays > 0) ||
+          event.dateEnd === undefined
       )
       .map((event) => {
         //When there is an event that is infinite
         if (event.recurringDays === RecurringDays.Infinite) {
           //Month and day (year does not matter)
           let eventDate: Date = new Date(event.dateStart);
-          if (
-            eventDate.getMonth() &&
-            eventDate.getFullYear() === this.date.getMonth() &&
-            this.date.getFullYear()
-          ) {
+          if (eventDate.getMonth() === this.date.getMonth()) {
             this.holidaysThisMonth.push({
               dayDate: new Date(
                 this.date.getFullYear(),

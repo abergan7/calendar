@@ -1,0 +1,30 @@
+[
+{
+	"nameOfHoliday": "Božič",
+	"dateStart": "12-25",
+	"recurringDays": -1
+},
+{
+	"nameOfHoliday": "Novo Leto",
+	"dateStart": "1-1",
+	"recurringDays": -1
+},
+{
+	"nameOfHoliday": "Random",
+	"dateStart": "2023-11-11",
+	"dateEnd": "2023-12-5",
+	"recurringDays": 1
+},
+{
+	"nameOfHoliday": "Random  2",
+	"dateStart": "2023-12-02",
+	"dateEnd": "2023-12-02",
+	"recurringDays": 0
+},
+{
+	"nameOfHoliday": "Zadnji",
+	"dateStart": "2023-10-2",
+	"dateEnd": "2023-11-23",
+	"recurringDays": 2
+}
+]

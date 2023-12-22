@@ -1,3 +1,7 @@
 .tooltip {
-  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-0 left-0 bg-gray-800 text-white text-sm rounded p-2 mt-2 -top-full max-h-40 overflow-y-auto;
+  @apply absolute transform -translate-x-1/2 translate-y-16 bg-gray-800 text-white text-sm rounded p-2 mt-2 -top-full w-40 max-h-60 overflow-y-auto z-10;
+}
+
+.holiday {
+  @apply m-4;
 }
